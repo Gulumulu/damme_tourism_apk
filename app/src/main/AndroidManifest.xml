@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.kabriel.dammetourism">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".barcode.BarcodeCaptureActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+        </activity>
+
+        <activity
+            android:name=".ScannerActivity"
+            android:label="@string/scanner_name"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.kabriel.dammetourism.MainActivity"/>
+        </activity>
+
+        <activity
+            android:name=".GeneratorActivity"
+            android:label="@string/payment_name"
+            android:parentActivityName=".SightsActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SightsActivity"/>
+        </activity>
+
+        <activity android:name=".SightsActivity"
+            android:label="@string/sights_name"
+            android:parentActivityName=".AllSightsActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="AllSightsActivity"/>
+        </activity>
+
+        <activity android:name=".BaseCardFormActivity"
+            android:label="@string/payment_name"
+            android:parentActivityName=".SightsActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SightsActivity"/>
+        </activity>
+
+        <activity android:name=".TicketActivity"
+            android:label="@string/ticket_name"
+            android:parentActivityName=".SightsActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SightsActivity"/>
+        </activity>
+
+        <activity android:name=".AllSightsActivity"
+            android:label="@string/ticket_name"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.kabriel.dammetourism.MainActivity"/>
+        </activity>
+
+    </application>
+
+</manifest>
